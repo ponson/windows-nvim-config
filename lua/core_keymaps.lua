@@ -12,8 +12,8 @@ keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
 -- 視窗管理 (Window Management)
 -- ==========================================
 -- 視窗分割
-vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })   -- 垂直分割 (Split Vertical)
-vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- 水平分割 (Split Horizontal)
+vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })     -- 垂直分割 (Split Vertical)
+vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })   -- 水平分割 (Split Horizontal)
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" }) -- 關閉當前視窗 (Split Close)
 
 -- 視窗穿梭 (取代繁瑣的 <C-w> + 方向)

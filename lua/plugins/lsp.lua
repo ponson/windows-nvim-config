@@ -7,14 +7,24 @@ return {
     },
     config = function()
         require("mason").setup()
+        
+        -- 1. 先載入 lspconfig，讓它把各語言的預設設定檔「註冊」進 Neovim 核心
+        require("lspconfig")
+
+        -- 2. 設定 Mason-LspConfig 的自動攔截器 (Handlers)
         require("mason-lspconfig").setup({
             ensure_installed = { "lua_ls", "pyright" },
+            
+            handlers = {
+                -- 這個預設函數會自動接管所有透過 Mason 安裝的伺服器
+                function(server_name)
+                    -- 【關鍵升級】使用 Neovim 0.11+ 的原生 API 來啟動伺服器
+                    vim.lsp.enable(server_name)
+                end,
+            }
         })
-
-        local lspconfig = require("lspconfig")
-        lspconfig.lua_ls.setup({})
-        lspconfig.pyright.setup({})
         
+        -- 3. 綁定大腦專屬快捷鍵
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
     end,

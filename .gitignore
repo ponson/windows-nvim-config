@@ -1,0 +1,4 @@
+# 排除插件本體與資料 (由 Lazy.nvim 自動管理)
+lua-language-server/
+undodir/
+lazy-lock.json
