@@ -8,7 +8,7 @@ return {
         configs.setup({
             -- 指定要安裝的語言語法解析器 (Parsers)
             ensure_installed = { "lua", "vim", "vimdoc", "javascript", "python" },
-            
+
             -- 同步安裝解析器 (只推薦在 Windows 且網路不穩時使用 false)
             sync_install = false,
 

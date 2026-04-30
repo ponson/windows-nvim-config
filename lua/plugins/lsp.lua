@@ -25,7 +25,12 @@ return {
         })
         
         -- 3. 綁定大腦專屬快捷鍵
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
-        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to Definition' })
+        vim.keymap.set('n', 'K',           vim.lsp.buf.hover,        { desc = 'Hover Documentation' })
+        vim.keymap.set('n', 'gd',          vim.lsp.buf.definition,   { desc = 'Go to Definition' })
+        vim.keymap.set('n', 'gr',          vim.lsp.buf.references,   { desc = 'Go to References' })
+        vim.keymap.set('n', '<leader>rn',  vim.lsp.buf.rename,       { desc = 'Rename Symbol' })
+        vim.keymap.set('n', '<leader>ca',  vim.lsp.buf.code_action,  { desc = 'Code Action' })
+        vim.keymap.set('n', ']d',          vim.diagnostic.goto_next, { desc = 'Next Diagnostic' })
+        vim.keymap.set('n', '[d',          vim.diagnostic.goto_prev, { desc = 'Prev Diagnostic' })
     end,
 }
