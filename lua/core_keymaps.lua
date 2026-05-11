@@ -8,6 +8,12 @@ local keymap = vim.keymap
 -- 建立一個測試快捷鍵：在一般模式 (n) 下，按下 <Space> + w 進行存檔
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
 
+-- 將 jk 映射為 Esc (在 Insert mode 下)
+vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
+
+-- (選擇性補充) 很多開發者也會順便把 jj 綁定上去，防止有時候手指打結
+vim.keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jj" })
+
 -- ==========================================
 -- 視窗管理 (Window Management)
 -- ==========================================
